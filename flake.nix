@@ -24,8 +24,9 @@
           (final: prev: {
             pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [ (pyfinal: pyprev: {
                 horizon = pyfinal.callPackage ./packages/horizon.nix {inherit (nixpkgs) callPackage python3Packages;};  
-            })
-        ]})];
+            })];
+          })
+        ];};
         pre-commit-hooks-run = pre-commit-hooks-nix.lib.${system}.run;
       in
       rec {
