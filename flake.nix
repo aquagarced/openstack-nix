@@ -26,6 +26,7 @@
                 horizon = pyfinal.callPackage ./packages/horizon.nix {inherit (nixpkgs) callPackage python3Packages;};
                 django = nixpkgs.legacyPackages.x86_64-linux.python3Packages.django;
             })];
+           uwsgi = prev.uwsgi.overrideAttrs{pkgs = final};
           })
         ];};
         pre-commit-hooks-run = pre-commit-hooks-nix.lib.${system}.run;
