@@ -23,7 +23,8 @@
         pkgs = import nixpkgs { inherit system; overlays = [
           (final: prev: {
             pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [ (pyfinal: pyprev: {
-                horizon = pyfinal.callPackage ./packages/horizon.nix {inherit (nixpkgs) callPackage python3Packages;};  
+                horizon = pyfinal.callPackage ./packages/horizon.nix {inherit (nixpkgs) callPackage python3Packages;};
+                django = nixpkgs.python312Packages.django;
             })];
           })
         ];};
