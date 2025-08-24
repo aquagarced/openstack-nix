@@ -11,17 +11,6 @@ let
   cfg = config.horizon;
   user = "nginx";
   group = "nginx";
-  horizon-uwsgi = pkgs.uwsgi.override {
-        pkgs = pkgs.uwsgi.pkgs.override {
-          python3 = pkgs.uwsgi.pkgs.python3.override {
-            packageOverrides = pself: psuper: {
-              horizon = horizon-pkg;
-            };
-          };
-          ...
-        };
-        ...
-      };
 in
 {
   options.horizon = {
@@ -80,7 +69,6 @@ in
     };
 
     services.uwsgi = {
-      package = horizon-uwsgi;
       instance.vassals.horizon = {
         type = "normal";
         
