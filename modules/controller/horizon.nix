@@ -83,10 +83,10 @@ in
 
         enable-threads = true;
         #plugins = [ "python3" ];
-        #pythonPackages = _: [
-        #  horizon
-        #  pkgs.python312Packages.django
-        #];
+        pythonPackages = _: [
+          horizon
+          pkgs.python312Packages.django
+        ];
         processes = 3;
         threads = 10;
         thunder-lock = true;
