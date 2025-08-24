@@ -24,7 +24,7 @@
           (final: prev: {
             pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [ (pyfinal: pyprev: {
                 horizon = pyfinal.callPackage ./packages/horizon.nix {inherit (nixpkgs) callPackage python3Packages;};
-                django = nixpkgs.python3Packages.django;
+                django = nixpkgs.legacyPackages.x86_64-linux.python3Packages.django;
             })];
           })
         ];};
