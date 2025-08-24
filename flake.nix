@@ -21,14 +21,11 @@
       system:
       let
         pkgs = import nixpkgs { inherit system; overlays = [
-        (final: prev: {
-    python3 = prev.python3.override {
-      packageOverrides = pyfinal: pyprev: {
-        horizon = pyfinal.callPackage ./packages/horizon.nix {inherit (pkgs) callPackage python3Packages;};
-      };
-    };
-  })
-        ];};
+          (final: prev: {
+            pythonPackagesExtensions = prev.pythonPackagesExtensions ++ [ (pyfinal: pyprev: {
+                horizon = pyfinal.callPackage ./packages/horizon.nix {inherit (nixpkgs) callPackage python3Packages;};  
+            })
+        ]})];
         pre-commit-hooks-run = pre-commit-hooks-nix.lib.${system}.run;
       in
       rec {
