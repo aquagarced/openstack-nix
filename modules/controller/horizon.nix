@@ -83,6 +83,7 @@ in
         enable-threads = true;
         pythonPackages = _: [
           horizon
+          django
         ];
         processes = 3;
         threads = 10;
