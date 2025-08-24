@@ -1,4 +1,4 @@
-{  }:
+{ horizon-pkg }:
 {
   config,
   lib,
@@ -26,7 +26,7 @@ in
       '';
     };
     package = mkOption {
-      default = horizon;
+      default = horizon-pkg;
       description = ''The Horizon Package to use'';
       type = types.package;
     };
