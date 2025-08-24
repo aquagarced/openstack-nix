@@ -13,6 +13,13 @@ let
   group = "nginx";
 in
 {
+  nixpkgs.overlays = [ (final: prev: {
+    python3 = prev.python3.override {
+      packageOverrides = pyfinal: pyprev: {
+        horizon = horizon-pkg;
+      };
+    };
+  }) ];
   options.horizon = {
     enable = mkEnableOption "Enable OpenStack Dashboard" // {
       default = true;
