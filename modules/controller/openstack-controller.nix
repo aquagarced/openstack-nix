@@ -30,7 +30,7 @@ in
     (import ./placement.nix { inherit placement; })
     (import ./nova.nix { inherit nova; })
     (import ./neutron.nix { inherit neutron; })
-    (import ./horizon.nix { inherit horizon; })
+    (import ./horizon.nix { })
   ];
 
   config = {
