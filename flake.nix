@@ -24,7 +24,7 @@
         (final: prev: {
     python3 = prev.python3.override {
       packageOverrides = pyfinal: pyprev: {
-        horizon = pself.callPackage ./packages/horizon.nix {inherit (pkgs) callPackage python3Packages;};
+        horizon = pyfinal.callPackage ./packages/horizon.nix {inherit (pkgs) callPackage python3Packages;};
       };
     };
   })
