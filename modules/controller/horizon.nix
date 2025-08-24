@@ -69,6 +69,7 @@ in
     };
 
     services.uwsgi = {
+      plugins = [ "python3" ];
       instance.vassals.horizon = {
         type = "normal";
         
@@ -82,7 +83,7 @@ in
         static-map2 = "/horizon/static=${cfg.package}/static-compressed";
 
         enable-threads = true;
-        #plugins = [ "python3" ];
+        
         pythonPackages = self: with self; [
           horizon
           django
