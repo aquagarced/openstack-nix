@@ -28,7 +28,7 @@
       };
     };
   })
-        ]};
+        ];};
         pre-commit-hooks-run = pre-commit-hooks-nix.lib.${system}.run;
       in
       rec {
