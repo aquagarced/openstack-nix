@@ -1,4 +1,4 @@
-{ horizon }:
+{  }:
 {
   config,
   lib,
