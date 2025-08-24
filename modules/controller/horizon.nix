@@ -70,8 +70,8 @@ in
 
     services.uwsgi = {
       package = pkgs.uwsgi.override {
-        pkgs = pkgs.override {
-          python3 = pkgs.python3.override {
+        pkgs = pkgs.uwsgi.pkgs.override {
+          python3 = pkgs.uwsgi.pkgs.python3.override {
             packageOverrides = pself: psuper: {
               horizon = horizon-pkg;
             };
