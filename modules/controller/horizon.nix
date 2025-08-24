@@ -69,11 +69,6 @@ in
     };
 
     services.uwsgi = {
-      package.python3 = pkgs.python3.override {
-            packageOverrides = pself: psuper: {
-              horizon = horizon;
-            };
-        };
       instance.vassals.horizon = {
         type = "normal";
         
