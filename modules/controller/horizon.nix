@@ -81,6 +81,7 @@ in
         static-map2 = "/horizon/static=${cfg.package}/static-compressed";
 
         enable-threads = true;
+        plugins = [ "python3" ];
         pythonPackages = _: [
           horizon
           pkgs.python312Packages.django
