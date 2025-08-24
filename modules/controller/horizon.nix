@@ -82,11 +82,11 @@ in
         static-map2 = "/horizon/static=${cfg.package}/static-compressed";
 
         enable-threads = true;
-        plugins = [ "python3" ];
-        pythonPackages = _: [
-          horizon
-          pkgs.python312Packages.django
-        ];
+        #plugins = [ "python3" ];
+        #pythonPackages = _: [
+        #  horizon
+        #  pkgs.python312Packages.django
+        #];
         processes = 3;
         threads = 10;
         thunder-lock = true;
