@@ -20,7 +20,15 @@
     flake-utils.lib.eachSystem [ "x86_64-linux" ] (
       system:
       let
-        pkgs = import nixpkgs { inherit system; };
+        pkgs = import nixpkgs { inherit system; overlays = [
+        (final: prev: {
+    python3 = prev.python3.override {
+      packageOverrides = pyfinal: pyprev: {
+        horizon = pself.callPackage ./packages/horizon.nix {inherit (pkgs) callPackage python3Packages;};
+      };
+    };
+  })
+        ]};
         pre-commit-hooks-run = pre-commit-hooks-nix.lib.${system}.run;
       in
       rec {
