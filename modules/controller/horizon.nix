@@ -69,13 +69,14 @@ in
     };
 
     services.uwsgi = {
-      instance.vassals.horizon = {
-        type = "normal";
-        package = pkgs.python3.override {
+      package.python3 = pkgs.python3.override {
             packageOverrides = pself: psuper: {
               horizon = horizon;
             };
         };
+      instance.vassals.horizon = {
+        type = "normal";
+        
         socket = "/run/uwsgi/horizon.sock";
         buffer-size = 65535;
         immediate-uid = user;
