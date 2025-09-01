@@ -20,7 +20,7 @@ let
 
     [DEFAULT]
     transport_url = rabbit://openstack:openstack@controller:5672/
-    my_ip = 10.0.0.11
+    my_ip = 127.0.0.1
     log_dir = /var/log/nova
     lock_path = /var/lock/nova
     state_path = /var/lib/nova
