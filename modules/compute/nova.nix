@@ -111,7 +111,7 @@ let
   };
 in
 {
-  options.nova = {
+  options.nova-compute = {
     enable = mkEnableOption "Enable OpenStack Nova." // {
       default = true;
     };
