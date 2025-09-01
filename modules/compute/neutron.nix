@@ -52,7 +52,7 @@ let
   };
 in
 {
-  options.neutron = {
+  options.neutron-compute = {
     enable = mkEnableOption "Enable OpenStack Neutron." // {
       default = true;
     };
@@ -131,7 +131,7 @@ in
       resetOnStart = true;
     };
 
-    systemd.services.neutron-openvswitch-agent = {
+    systemd.services.neutron-compute-openvswitch-agent = {
       description = "OpenStack Neutron OpenVSwitch Agent";
       after = [
         "network.target"
