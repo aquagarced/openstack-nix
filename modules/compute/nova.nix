@@ -9,7 +9,7 @@
 with lib;
 
 let
-  cfg = config.nova;
+  cfg = config.nova-compute;
   nova_env = pkgs.python3.buildEnv.override {
     extraLibs = [ cfg.novaPackage ];
   };
