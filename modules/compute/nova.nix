@@ -25,7 +25,7 @@ let
     state_path = /var/lib/nova
     rootwrap_config = ${rootwrapConf}
     compute_driver = libvirt.LibvirtDriver
-    my_ip = 10.0.0.39
+    my_ip = 127.0.0.1
     transport_url = rabbit://openstack:openstack@controller
 
     [api]
