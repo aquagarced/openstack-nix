@@ -9,7 +9,7 @@
 with lib;
 
 let
-  cfg = config.neutron;
+  cfg = config.neutron-compute;
   neutron_env = pkgs.python3.buildEnv.override {
     extraLibs = [ neutron ];
   };
